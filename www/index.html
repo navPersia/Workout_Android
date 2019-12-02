@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--    <link rel="stylesheet" href="materialize/css/materialize.css">-->
+<!--    <script src="materialize/js/materialize.js"></script>-->
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script defer src="fontawesome-free-5.11.2-web/js/all.min.js"></script>
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+
+    <link href="fontawesome-free-5.11.2-web/css/all.min.css" rel="stylesheet">
+    <link href="fontawesome-free-5.11.2-web/css/fontawesome.min.css" rel="stylesheet">
+    <link href="fontawesome-free-5.11.2-web/css/v4-shims.min.css" rel="stylesheet">
+
+    <title>Workout</title>
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-bottom-nav__item ">
+            <div class="mobile-bottom-nav__item-content">
+                <a href="javascript:(show('one', 'een'))"><i class="fas fa-dumbbell secoundary center een marker"></i></a>
+            </div>
+        </div>
+        <div class="mobile-bottom-nav__item ">
+            <div class="mobile-bottom-nav__item-content">
+                <a href="javascript:(show('two', 'twee'))"><i class="material-icons secoundary center twee">library_music</i></a>
+            </div>
+        </div>
+        <div class="mobile-bottom-nav__item">
+            <i class="material-icons center first" onclick="stopwatchnav(), stopwatch.start()">timer</i>
+        </div>
+
+        <div class="mobile-bottom-nav__item">
+            <div class="mobile-bottom-nav__item-content">
+                <a href="javascript:(show('three', 'drie'))"><i class="material-icons secoundary center drie">event_available</i></a>
+            </div>
+        </div>
+
+        <div class="mobile-bottom-nav__item">
+            <div class="mobile-bottom-nav__item-content">
+                <a href="javascript:(show('four','vier'))"><i class="fas fa-info-circle secoundary center vier"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- /navigation -->
+    <!-- stop watch -->
+    <nav class="mobile-bottom-watch" id="stopwatch">
+        <div class="mobile-bottom-nav__item" onclick="shownavigation()">
+            <div class="mobile-bottom-nav__item-content">
+                <i class="center first material-icons">stop</i>
+            </div>
+        </div>
+        <div class="mobile-bottom-nav__item" onClick="stopwatch.start();">
+            <div class="mobile-bottom-nav__item-content">
+                <i class="center material-icons ">play_circle_outline</i>
+            </div>
+        </div>
+        <div class="mobile-bottom-nav__item" onClick="stopwatch.stop();">
+            <div class="mobile-bottom-nav__item-content">
+                <i class="center material-icons ">pause_circle_outline</i>
+            </div>
+        </div>
+        <div class="mobile-bottom-nav__item stopwatch" id="timer">
+        </div>
+    </nav>
+    <!-- /stop watch -->
+    <!-- one -->
+    <div id="one" class="disp">
+        <div class="container">
+            <ul>
+                <li><p>Chest – Barbell Bench Press – 4 sets of 8 reps</p>
+                    <img class="fotos" src="img/routin1.png" alt="">
+                </li>
+            </ul>
+            <hr class="khat">
+            <ul>
+                <li><p>Back – Lat-pulldowns – 4 sets of 10 reps</p>
+                    <img class="fotos" src="img/routin2.jpg" alt="">
+                </li>
+            </ul>
+            <hr class="khat">
+            <ul>
+                <li><p>Shoulders – Seated Dumbbell Press – 4 sets of 10 reps</p>
+                    <img class="fotos" src="img/routin3.jpg" alt="">
+                </li>
+            </ul>
+            <hr class="khat">
+            <ul>
+                <li><p>Legs – Leg Extensions – 4 sets of 10 reps</p>
+                    <img class="fotos" src="img/routin4.jpg" alt="">
+                </li>
+            </ul>
+            <hr class="khat">
+            <ul>
+                <li><p>Biceps – Barbell Bbicep Curls – 3 sets of 10 reps</p>
+                    <img class="fotos" src="img/routin5.jpg" alt="">
+                </li>
+            </ul>
+            <hr class="khat">
+            <ul>
+                <li><p>Triceps – Triceps Rope Pushdowns – 3 sets of 15 reps</p>
+                    <img class="fotos" src="img/routin6.png" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /one -->
+    <!-- two -->
+    <div id="two" class="disp">
+        <div class="container soda">
+            <div class="card mt-1 mb-1">
+                <table class="sizing">
+                    <span class="d-flex justify-content-center d-inline-flex p-2 bd-highlight">Track 1</span>
+                    <tr>
+                        <td width="15%"><button id="play-btn" class="btn-hide" onclick="playAudio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')"><i class="center material-icons">play_circle_outline</i></button></td>
+                        <td width="15%"><button id="pause-btn" class="btn-hide" onclick="pauseAudio()"><i class="center material-icons">pause_circle_outline</i></button></td>
+                        <td width="70%"><p id="audio_position"></p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- /two -->
+    <!-- three -->
+    <div id="three" class="disp">
+        <div class="container soda">
+            <div class="content">
+                <ul id="list">
+                </ul>
+            </div>
+        </div>
+        <div class="todoAdd">
+            <table class="add-to-do">
+                <tr>
+                    <td><i class="fas fa-plus-circle greenbtn"></i></td>
+                    <td><input type="text" id="input" placeholder="workout"></td>
+                    <td><input type="text" id="sets" placeholder="antaal set"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- /three -->
+    <!-- four -->
+    <div id="four" class="disp">
+        <div class="contact1 soda">
+            <div class="container-contact1">
+                <ul>
+                    <li>Made by: Navid Radkusha</li>
+                    <li><a href="tel://+32494846192">Click hier to call me!</a></li>
+                    <li><a href="sms:/* +32494846192 */?body=/* coming from workOtu */">Click hier to send me a sms!</a></li>
+                </ul>
+            </div>
+            <div class="container-contact1">
+                <form id="myForm" class="contact1-form validate-form">
+                    <div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input1" type="text" name="email" placeholder="Email">
+                        <span class="shadow-input1"></span>
+                    </div>
+
+                    <div class="wrap-input1 validate-input" data-validate = "Message is required">
+                        <textarea class="input1" name="body" placeholder="Message"></textarea>
+                        <span class="shadow-input1"></span>
+                    </div>
+
+                    <input class="contact1-form-btn" type="button" id="save" value="send"></input>
+                </form>
+                <span id="result">click on send to send you message!</span>
+            </div>
+        </div>
+    </div>
+    <!-- /four -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/stopWatch.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/Doit.js"></script>
+    <script src="js/mediaPlayer.js"></script>
+</body>
